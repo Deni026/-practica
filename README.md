@@ -1,5 +1,5 @@
 # Practica mea
 
-## Pragraf 1
+## Paragraf 1
 
 Aici este informatie despre practica mea.
