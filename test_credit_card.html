@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Scanner</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: blue;
+        }
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        #captured-photo {
+            margin-top: 20px;
+            max-width: 100%;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Automated Credit Card Scanner</h1>
+    <button id="scan-button">Scan Your Credit Card</button>
+    <video id="camera-stream" autoplay style="display: none;"></video>
+    <canvas id="photo-canvas" style="display: none;"></canvas>
+    <img id="captured-photo" alt="Captured Photo" style="display: none;">
+
+    <script>
+        const scanButton = document.getElementById('scan-button');
+        const cameraStream = document.getElementById('camera-stream');
+        const photoCanvas = document.getElementById('photo-canvas');
+        const capturedPhoto = document.getElementById('captured-photo');
+
+        const startCamera = async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                cameraStream.srcObject = stream;
+                cameraStream.style.display = 'block';
+                scanButton.textContent = 'Capture Photo';
+
+                scanButton.onclick = capturePhoto;
+            } catch (error) {
+                alert('Unable to access the camera. Please check your device settings.');
+            }
+        };
+
+        const capturePhoto = () => {
+            const context = photoCanvas.getContext('2d');
+            photoCanvas.width = cameraStream.videoWidth;
+            photoCanvas.height = cameraStream.videoHeight;
+            context.drawImage(cameraStream, 0, 0, photoCanvas.width, photoCanvas.height);
+
+            const photoData = photoCanvas.toDataURL('image/png');
+            capturedPhoto.src = photoData;
+            capturedPhoto.style.display = 'block';
+
+            cameraStream.srcObject.getTracks().forEach(track => track.stop());
+            cameraStream.style.display = 'none';
+
+            scanButton.textContent = 'Scan Your Credit Card';
+            scanButton.onclick = startCamera; // Reattach the original event listener
+        };
+
+        scanButton.addEventListener('click', startCamera);
+    </script>
+</body>
+</html>

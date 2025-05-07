@@ -9,3 +9,5 @@ Aici este informatie despre practica mea. prima zi de practica a mers bine.
 Click aici: [GitHub & BitBucket HTML Preview](https://github.com/htmlpreview/htmlpreview.github.com?tab=readme-ov-file)
 
 Link direct la HTML-ul meu: [Click aici!!!](https://htmlpreview.github.io/?https://github.com/Deni026/-practica/blob/main/practica1.html)
+
+Scanare de credit card: [Click aici!!!](https://htmlpreview.github.io/?https://github.com/Deni026/-practica/blob/main/test_credit_card.html)
