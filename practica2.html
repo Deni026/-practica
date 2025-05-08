@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portmoneu Electronic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="app-header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Portmoneu Electronic">
+        </div>
+        <h1 class="app-title">Portmoneu Electronic</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Section for displaying cards -->
+        <section class="cards-section">
+            <h2>Cardurile Mele</h2>
+            <div class="cards-container">
+                <!-- Example card -->
+                <div class="card">
+                    <img src="card-image.png" alt="Card Image" class="card-image">
+                    <div class="card-details">
+                        <p class="card-holder">Nume Titular: John Doe</p>
+                        <p class="card-balance">Sold: 1000 RON</p>
+                    </div>
+                </div>
+            </div>
+            <button class="add-card-button" onclick="toggleAddCardForm()">Adaugă Card</button>
+        </section>
+
+        <!-- Hidden form for adding a new card -->
+        <div class="add-card-form hidden" id="addCardForm">
+            <h3>Adaugă un Card Nou</h3>
+            <form>
+                <label for="cardHolder">Nume Titular:</label>
+                <input type="text" id="cardHolder" name="cardHolder" required>
+                
+                <label for="cardNumber">Număr Card:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+                
+                <label for="initialBalance">Sold Inițial:</label>
+                <input type="number" id="initialBalance" name="initialBalance" required>
+                
+                <label for="cardImage">Imagine Card:</label>
+                <input type="file" id="cardImage" name="cardImage" accept="image/*">
+                
+                <button type="submit">Adaugă</button>
+                <button type="button" onclick="toggleAddCardForm()">Anulează</button>
+            </form>
+        </div>
+
+        <!-- Transactions Panel -->
+        <aside class="transactions-panel">
+            <h2>Tranzacții</h2>
+            <ul class="transactions-list">
+                <!-- Example transaction -->
+                <li class="transaction-item">
+                    <p>Card: John Doe</p>
+                    <p>Suma: -200 RON</p>
+                    <p>Data: 2023-10-01</p>
+                </li>
+            </ul>
+        </aside>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
