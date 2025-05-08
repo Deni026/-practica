@@ -4,7 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portmoneu Electronic</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Conținutul fișierului Untitled.css */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .app-title {
+            margin-left: 10px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .cards-section {
+            margin-bottom: 20px;
+        }
+        .cards-container {
+            display: flex;
+            gap: 10px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .card-image {
+            width: 100%;
+            height: auto;
+        }
+        .add-card-form {
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+        .transactions-panel {
+            margin-top: 20px;
+        }
+        .transactions-list {
+            list-style: none;
+            padding: 0;
+        }
+        .transaction-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .additional-cards .card-container {
+            display: flex;
+            gap: 10px;
+        }
+        .additional-cards .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -93,6 +159,12 @@
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        // Conținutul fișierului Untitled.js
+        function toggleAddCardForm() {
+            const form = document.getElementById('addCardForm');
+            form.classList.toggle('hidden');
+        }
+    </script>
 </body>
-</html>
+</html></section></aside></div>
