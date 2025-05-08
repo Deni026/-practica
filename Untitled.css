@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    color: #333;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    width: 300px;
+    height: 180px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom right, #ffffff, #e6e9ef);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Status Colors */
+.card.positive {
+    border-top: 5px solid #4caf50;
+}
+
+.card.negative {
+    border-top: 5px solid #f44336;
+}
+
+.card.inactive {
+    border-top: 5px solid #9e9e9e;
+    opacity: 0.6;
+}
+
+/* Card Logo */
+.card-logo {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: auto;
+    opacity: 0.8;
+}
+
+/* Card Details */
+.card-details {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #333;
+}
+
+.card-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.card-details p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+}
+
+/* Add Card Form */
+.add-card-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.add-card-form.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.add-card-form h2 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.add-card-form input,
+.add-card-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.add-card-form button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-card-form button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+}
